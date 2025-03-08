@@ -10,6 +10,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@google-cloud/local-auth": "^3.0.1",
+    "dotenv": "^16.4.7",
+    "google-auth-library": "^9.15.1",
+    "googleapis": "^146.0.0",
     "puppeteer": "^24.3.0"
   }
 }

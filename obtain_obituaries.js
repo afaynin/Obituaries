@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const { exec } = require('child_process');
 
 (async () => {
   // Launch the browser in headful mode for debugging.
@@ -64,4 +65,17 @@ await page.evaluate(() => {
 //   await page.close()
   // Optionally, close the browser.
   // await browser.close();
+  const { exec } = require('child_process');
+
+exec(`python send_emails.py \"${obituary}\"`, (error, stdout, stderr) => {
+    if (error) {
+        console.error(`Error: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.error(`Stderr: ${stderr}`);
+        return;
+    }
+    console.log(`Output: ${stdout}`);
+});
 })();
